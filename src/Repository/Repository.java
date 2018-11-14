@@ -30,18 +30,20 @@ public class Repository implements IRepository {
 		return list.size();
 	}
 	@Override
-	public void logProgramStates() {
+	public void logProgramStates() throws IOException {
 		PrintWriter printWriter;
-		for(int i = 0 ; i < list.size(); i++) {		
-	
-			try {
-				printWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath + (i+1) + ".txt", true)));
-				printWriter.print(list.get(i).toString());
-				printWriter.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		
+		printWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+		printWriter.print(list.get(list.size() - 1).toString());
+		printWriter.close();
+		
+		
+		
+	}
+	@Override
+	public void clean() {
+		for(int i = 1 ; i < list.size(); i++)
+			list.remove(i);
 		
 	}
 	

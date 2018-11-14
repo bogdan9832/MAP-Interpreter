@@ -1,0 +1,99 @@
++---------------------------------------------------------------
+
+ExecutionStack: 
+	a = 2 - 2 
+	If a then: v = 2 else:v = 3  ;Print( v )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If a then: v = 2 else:v = 3  ;Print( v )
+
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If a then: v = 2 else:v = 3  
+	Print( v )
+
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 3 
+	Print( v )
+
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( v )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 3
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 0
+	v     = 3
+
+
+FileTable: 
+	Empty
+
+Output: 
+	3, 

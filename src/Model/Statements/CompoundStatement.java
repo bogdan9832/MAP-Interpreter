@@ -14,7 +14,7 @@ public class CompoundStatement implements IStatement {
 	}
 
 		@Override
-	public IProgramState execute(ProgramState state) throws Exception {
+	public IProgramState execute(ProgramState state) {
        state.exeStack.push(statement2);
        state.exeStack.push(statement1);
        
@@ -39,6 +39,6 @@ public class CompoundStatement implements IStatement {
         this.statement2 = statement2;
     }
     public String toString() {
-    	return "CompoundStatement( "+ statement1.toString() +", " + statement2.toString() +")";
+    	return ""+ statement1.toString() +";" + statement2.toString() +"";
     }
 }

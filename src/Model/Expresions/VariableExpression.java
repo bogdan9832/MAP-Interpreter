@@ -29,7 +29,7 @@ public class VariableExpression implements IExpression{
 		return this.resolve(st) != 0 ? true : false;
 	}
 	public String toString() {
-    	return "ConstantExpression( "+ s + ")";
+    	return s;
     }
 
 	

@@ -1,57 +1,62 @@
 package Controller;
 
+import java.io.IOException;
+
 import Controller.Interfaces.IController;
+import Model.Exceptions.DuplicateFileException;
+import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidFileException;
+import Model.Exceptions.InvalidSignException;
+import Model.Exceptions.InvalidStateException;
+import Model.Utils.ProgramState;
 import Model.Utils.Interfaces.IProgramState;
+import Model.Utils.Interfaces.PrintCallBack;
 import Repository.Interfaces.IRepository;
-import View.IView;
 
 public class Controller implements IController {
 
 	IRepository repo;
-	IView view;
-	public boolean stopEveryStep = false;
-	public Controller(IRepository r , IView v) {
+	public PrintCallBack callback;
+	public Controller(IRepository r) {
 		repo = r;
-		view = v;
 	}
-	public void runProgram(IProgramState s) {
-		boolean isEmpty = false;
-		view.displayStatus(s);
-		while(!isEmpty) {
-			try {
-				s.executeNextStep();
-				view.displayStatus(s);
-				
-			} catch (Exception e) {
-				isEmpty = true;
-				view.printMessage(e.getMessage());
-			}
-			
-			if(stopEveryStep == true && view.getMessage("Do you want to continue? (y/n)").equals("n"))
-				break;
-			repo.logProgramStates();	
-			
+
+	public ProgramState getNextState(IProgramState s) throws InvalidStateException, InvalidSignException,
+			DuplicateSymbolException, InvalidFileException, IOException, DuplicateFileException {
+		ProgramState st = new ProgramState((ProgramState) s);
+		repo.addProgramState(st);
+		st.executeNextStep();
+		return st;
+	}
+
+	@Override
+	public void allSteps() throws InvalidStateException, InvalidSignException, DuplicateSymbolException,
+			InvalidFileException, IOException, DuplicateFileException {
+		repo.clean();
+		IProgramState s = repo.getProgramState(0);
+
+		repo.logProgramStates();
+		callback.printCallBack(s.toString());
+
+		while (!s.isDone()) {
+			s = this.getNextState(s);
+			repo.logProgramStates();
+			callback.printCallBack(s.toString());
+
 		}
 	}
-	public void mainLoop() {
-		boolean running = true;
-		while(running) {
-			int opt =  view.run();
-			switch(opt) {
-			case 0:
-				view.printMessage("App exiting");
-				running = false;
-				break;
-			default:
-				if(opt < 0 || opt > repo.getSize()) 
-					view.printMessage("No program found with id " + opt);					
-				else						
-					runProgram(repo.getProgramState(opt - 1));			
-				
-				break;
-			}
+
+	@Override
+	public void nextStep() throws IOException, InvalidStateException, InvalidSignException, DuplicateSymbolException,
+			InvalidFileException, DuplicateFileException {
+
+		IProgramState s = repo.getProgramState(0);
+
+		if (!s.isDone()) {
+			s = this.getNextState(s);
+			repo.logProgramStates();
+
 		}
 	}
-	
 
 }

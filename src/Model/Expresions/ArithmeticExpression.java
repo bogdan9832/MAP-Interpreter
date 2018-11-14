@@ -46,7 +46,7 @@ public class ArithmeticExpression implements IExpression {
 		return this.resolve(st) != 0 ? true : false;
 	}
 	public String toString() {
-    	return "ArithmeticExpression("+ operator1.toString() + ", " + operand + "," + operator2.toString() +")";
-    }
+		return operator1 + " " + operand + " " + operator2;
+	}
 
 }

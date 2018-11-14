@@ -1,0 +1,84 @@
++---------------------------------------------------------------
+
+ExecutionStack: 
+	a = 2 + 3 * 5 ;b = a - 4 / 2 + 7 
+	Print( b )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	a = 2 + 3 * 5 
+	b = a - 4 / 2 + 7 
+	Print( b )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	b = a - 4 / 2 + 7 
+	Print( b )
+
+
+SymbolTable: 
+	a     = 17
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( b )
+
+
+SymbolTable: 
+	a     = 17
+	b     = 22
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 17
+	b     = 22
+
+
+FileTable: 
+	Empty
+
+Output: 
+	22, 

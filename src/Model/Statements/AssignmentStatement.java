@@ -1,5 +1,7 @@
 package Model.Statements;
 
+import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidSignException;
 import Model.Interfaces.IExpression;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Interfaces.IStatement;
@@ -14,7 +16,7 @@ public class AssignmentStatement implements IStatement {
         this.setExpression(exp);
     }
     @Override
-    public IProgramState execute(ProgramState state) throws Exception {
+    public IProgramState execute(ProgramState state) throws DuplicateSymbolException, InvalidSignException {
     	
     	
 			state.symTabel.addSymbol(s, this.expression.resolve(state.symTabel));
@@ -22,7 +24,7 @@ public class AssignmentStatement implements IStatement {
         return state;
     }
     public String toString() {
-    	return "AssignmentStatement( "+ s +", " + expression.toString() +")";
+    	return s + " = " + expression.toString() +" ";
     }
     
 

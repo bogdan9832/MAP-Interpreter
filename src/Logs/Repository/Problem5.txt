@@ -1,0 +1,56 @@
++---------------------------------------------------------------
+
+ExecutionStack: 
+	OpenReadFileStatement(var_f, "src/Input/test.in")
+	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f + 2, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+

@@ -1,0 +1,331 @@
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 12, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	Empty
+
+Output: 
+	1, 12, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	OpenReadFileStatement(var_f, "src/Input/test.in")
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 1
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	0     = false
+
+Output: 
+	1, 12, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 12
+
+
+FileTable: 
+	Empty
+
+Output: 
+	1, 12, 

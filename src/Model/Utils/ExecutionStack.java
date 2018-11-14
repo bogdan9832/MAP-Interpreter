@@ -10,7 +10,11 @@ public class ExecutionStack implements IExecutionStack {
     public ExecutionStack(){
         stack = new Stack<>();
     }
-
+    public ExecutionStack(ExecutionStack s) {
+    	stack = new Stack<>();
+    	for(IStatement st: s.stack)
+    		stack.push(st);
+    }
     public Stack<IStatement> getStack() {
         return stack;
     }

@@ -11,6 +11,9 @@ public class Output implements IOutput {
 	public Output() {
 		out = new ArrayList<>();
 	}
+	public Output(Output o) {
+		out = new ArrayList<>(o.out);
+	}
 	@Override
 	public void addOutput(int s) {
 		out.add(s);

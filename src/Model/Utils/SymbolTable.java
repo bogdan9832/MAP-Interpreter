@@ -11,12 +11,15 @@ import java.util.Set;
 
 public class SymbolTable implements ISymbolTable {
 
-	HashMap<String,Integer> symbols;
+	public HashMap<String,Integer> symbols;
 	
 	public SymbolTable() {
 		symbols = new HashMap<>();
 	}
-	// replace with custom exception
+	
+	public SymbolTable(SymbolTable s) {
+		symbols = new HashMap<>(s.symbols);
+	}
 	@Override
 	public int getValueOf(String s) throws InvalidSymbolException  {
 		

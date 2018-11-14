@@ -27,6 +27,6 @@ public class PrintStatement implements IStatement {
         this.exp = exp;
     }
     public String toString() {
-    	return "PrintStatement( " + exp.toString() +  " )";
+    	return "Print( " + exp.toString() +  " )";
     }
 }
