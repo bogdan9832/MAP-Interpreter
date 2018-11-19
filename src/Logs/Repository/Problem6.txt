@@ -1,0 +1,1169 @@
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v )
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = false
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = true
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = true
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = true
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v )
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = true
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302;Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@55f96302
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69;Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapAllocationStatement@3d4eac69
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v )
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20)
+	new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22)
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v )
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 0
+	v     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	0     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20)
+	new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22);Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22)
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v );Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + v )
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( 100 + a )
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	120, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	120, 122, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 ;new( v, 20);new( a, 22);Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	v = 10 
+	new( v, 20);new( a, 22);Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20);new( a, 22);Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( v, 20)
+	new( a, 22);Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22);Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	new( a, 22)
+	Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapWritingStatement@55f96302;Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Model.Statements.HeapWritingStatement@55f96302
+	Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( a )
+	Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( a )
+	a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 30, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 0
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	2, 30, 

@@ -1,7 +1,10 @@
 package Model.Statements;
 
 import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidAddressException;
 import Model.Exceptions.InvalidSignException;
+import Model.Exceptions.InvalidSymbolException;
+import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IExpression;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Interfaces.IStatement;
@@ -16,10 +19,10 @@ public class AssignmentStatement implements IStatement {
         this.setExpression(exp);
     }
     @Override
-    public IProgramState execute(ProgramState state) throws DuplicateSymbolException, InvalidSignException {
+    public IProgramState execute(ProgramState state) throws DuplicateSymbolException, InvalidSignException, InvalidSymbolException, InvalidAddressException, NullAdressException {
     	
     	
-			state.symTabel.addSymbol(s, this.expression.resolve(state.symTabel));
+			state.symTabel.addSymbol(s, this.expression.resolve(state.symTabel, state.heap));
 		
         return state;
     }

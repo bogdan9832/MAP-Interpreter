@@ -7,10 +7,15 @@ import Model.Comands.ExitCommand;
 import Model.Comands.RunExample;
 import Model.Expresions.ArithmeticExpression;
 import Model.Expresions.ConstantExpression;
+import Model.Expresions.HeapReadExpression;
 import Model.Expresions.VariableExpression;
+import Model.Interfaces.IExpression;
+import Model.Interfaces.IStatement;
 import Model.Statements.AssignmentStatement;
 import Model.Statements.CloseReadFileStatement;
 import Model.Statements.CompoundStatement;
+import Model.Statements.HeapAllocationStatement;
+import Model.Statements.HeapWritingStatement;
 import Model.Statements.IfStatement;
 import Model.Statements.OpenReadFileStatement;
 import Model.Statements.PrintStatement;
@@ -22,7 +27,7 @@ public class Main {
 	public static void main(String[] args) {
 		// v = 2; print(v)
 		Repository repo1 = new Repository("src/Logs/Repository/Problem1.txt");
-		ProgramState s = new ProgramState(new ExecutionStack(), new Output(), new SymbolTable(), new FileTable());
+		ProgramState s = new ProgramState();
 		AssignmentStatement as1 = new AssignmentStatement("v", new ConstantExpression(2));
 		PrintStatement ps1 = new PrintStatement(new VariableExpression("v"));
 		s.addStatement(new CompoundStatement(as1, ps1));
@@ -32,7 +37,7 @@ public class Main {
 		// a=2+3*5;b=a-4/2 + 7;Print(b)
 
 		Repository repo2 = new Repository("src/Logs/Repository/Problem2.txt");
-		ProgramState s2 = new ProgramState(new ExecutionStack(), new Output(), new SymbolTable(), new FileTable());
+		ProgramState s2 = new ProgramState();
 		AssignmentStatement as2 = new AssignmentStatement("a", new ArithmeticExpression('+', new ConstantExpression(2),
 				new ArithmeticExpression('*', new ConstantExpression(3), new ConstantExpression(5)
 
@@ -52,7 +57,7 @@ public class Main {
 		// a=2-2; If a Then v=2 Else v=3; Print(v)
 		Repository repo3 = new Repository("src/Logs/Repository/Problem3.txt");
 
-		ProgramState s3 = new ProgramState(new ExecutionStack(), new Output(), new SymbolTable(), new FileTable());
+		ProgramState s3 = new ProgramState();
 		PrintStatement ps3 = new PrintStatement(new VariableExpression("v"));
 		IfStatement condS = new IfStatement(new VariableExpression("a"),
 				new AssignmentStatement("v", new ConstantExpression(2)),
@@ -68,7 +73,7 @@ public class Main {
 		 * then readFile(var_f,var_c);print(var_c) else print(0)); closeRFile(var_f)
 		 */
 		Repository repo4 = new Repository("src/Logs/Repository/Problem4.txt");
-		ProgramState s4 = new ProgramState(new ExecutionStack(), new Output(), new SymbolTable(), new FileTable());
+		ProgramState s4 = new ProgramState();
 		OpenReadFileStatement orfs1 = new OpenReadFileStatement("src/Input/test.in", "var_f");
 		ReadFileStatement rfs1 = new ReadFileStatement(new VariableExpression("var_f"), "var_c");
 		PrintStatement ps4 = new PrintStatement(new VariableExpression("var_c"));
@@ -86,17 +91,16 @@ public class Main {
 		s4.addStatement(orfs1);
 		repo4.addProgramState(s4);
 		Controller c4 = new Controller(repo4);
-		
-		
-		
+
 		/*
 		 * openRFile(var_f,"test.in"); readFile(var_f,var_c);print(var_c); (if var_c
 		 * then readFile(var_f + 2,var_c);print(var_c) else print(0)); closeRFile(var_f)
 		 */
 		Repository repo5 = new Repository("src/Logs/Repository/Problem5.txt");
-		ProgramState s5 = new ProgramState(new ExecutionStack(), new Output(), new SymbolTable(), new FileTable());
+		ProgramState s5 = new ProgramState();
 		OpenReadFileStatement orfs2 = new OpenReadFileStatement("src/Input/test.in", "var_f");
-		ReadFileStatement rfs3 = new ReadFileStatement(new ArithmeticExpression('+',new VariableExpression("var_f"),new ConstantExpression(2)), "var_c");
+		ReadFileStatement rfs3 = new ReadFileStatement(
+				new ArithmeticExpression('+', new VariableExpression("var_f"), new ConstantExpression(2)), "var_c");
 		PrintStatement ps7 = new PrintStatement(new VariableExpression("var_c"));
 		CompoundStatement cs3 = new CompoundStatement(rfs3, ps7);
 		ReadFileStatement rfs4 = new ReadFileStatement(new VariableExpression("var_f"), "var_c");
@@ -112,19 +116,56 @@ public class Main {
 		s5.addStatement(orfs2);
 		repo5.addProgramState(s5);
 		Controller c5 = new Controller(repo5);
+
+		// v=10;new(v,20);new(a,22);print(100+rH(v));print(100+rH(a))
+
+		Repository repo6 = new Repository("src/Logs/Repository/Problem6.txt");
+		ProgramState s6 = new ProgramState();
+
+		IStatement st1 = new CompoundStatement(new AssignmentStatement("v", new ConstantExpression(10)),
+				new CompoundStatement(new HeapAllocationStatement("v", new ConstantExpression(20)),
+						new CompoundStatement(new HeapAllocationStatement("a", new ConstantExpression(22)),
+								new CompoundStatement(
+										new PrintStatement(new ArithmeticExpression('+', new ConstantExpression(100),
+												new HeapReadExpression("v"))),
+										new PrintStatement(new ArithmeticExpression('+', new ConstantExpression(100),
+												new HeapReadExpression("a")))))));
+
+		s6.addStatement(st1);
+		repo6.addProgramState(s6);
+		Controller c6 = new Controller(repo6);
+
+		Repository repo7 = new Repository("src/Logs/Repository/Problem6.txt");
+		ProgramState s7 = new ProgramState();
+
+		IStatement st2 = new CompoundStatement(new AssignmentStatement("v", new ConstantExpression(10)),
+				new CompoundStatement(new HeapAllocationStatement("v", new ConstantExpression(20)),
+						new CompoundStatement(new HeapAllocationStatement("a", new ConstantExpression(22)),
+								new CompoundStatement(new HeapWritingStatement("a", new ConstantExpression(30)),
+										new CompoundStatement(new PrintStatement(new VariableExpression("a")),
+												new CompoundStatement(new PrintStatement(new HeapReadExpression("a")),
+														new AssignmentStatement("a", new ConstantExpression(0))))))));
+
+		s7.addStatement(st2);
+		repo7.addProgramState(s7);
+		Controller c7 = new Controller(repo7);
+
 		TextMenu txtMenu = new TextMenu();
 		txtMenu.addCommand(new ExitCommand("0", "Exit"));
 		txtMenu.addCommand(new RunExample("1", "v = 2; print(v)", c1));
 		txtMenu.addCommand(new RunExample("2", "a=2+3*5;b=a-4/2 + 7;Print(b)", c2));
 		txtMenu.addCommand(new RunExample("3", "a=2-2; If a Then v=2 Else v=3; Print(v)", c3));
-		txtMenu.addCommand(new RunExample("4",
-				"openRFile(var_f,\"test.in\"); " + "readFile(var_f,var_c);print(var_c); " + "(if var_c then readFile(var_f,var_c);print(var_c) " + "else print(0)); "
-						+ "closeRFile(var_f) ",
+		txtMenu.addCommand(new RunExample("4", "openRFile(var_f,\"test.in\"); " + "readFile(var_f,var_c);print(var_c); "
+				+ "(if var_c then readFile(var_f,var_c);print(var_c) " + "else print(0)); " + "closeRFile(var_f) ",
 				c4));
 		txtMenu.addCommand(new RunExample("5",
-				"openRFile(var_f,\"test.in\"); " + "readFile(var_f+2,var_c);print(var_c); " + "(if var_c then readFile(var_f,var_c);print(var_c) " + "else print(0)); "
+				"openRFile(var_f,\"test.in\"); " + "readFile(var_f+2,var_c);print(var_c); "
+						+ "(if var_c then readFile(var_f,var_c);print(var_c) " + "else print(0)); "
 						+ "closeRFile(var_f) ",
 				c5));
+
+		txtMenu.addCommand(new RunExample("6", "v=10;new(v,20);new(a,22);print(100+rH(v));print(100+rH(a))", c6));
+		txtMenu.addCommand(new RunExample("7", "v=10;new(v,20);new(a,22);wH(a,30);print(a);print(rH(a));a=0", c7));
 
 		txtMenu.show();
 	}

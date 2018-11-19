@@ -68,5 +68,10 @@ public class SymbolTable implements ISymbolTable {
 		return toReturn;
 	}
 
+	@Override
+	public HashMap<String, Integer> getContent() {
+		return symbols;
+	}
+
     
 }

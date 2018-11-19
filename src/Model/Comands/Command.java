@@ -4,9 +4,12 @@ import java.io.IOException;
 
 import Model.Exceptions.DuplicateFileException;
 import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidAddressException;
 import Model.Exceptions.InvalidFileException;
 import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidStateException;
+import Model.Exceptions.InvalidSymbolException;
+import Model.Exceptions.NullAdressException;
 import Model.Utils.Interfaces.PrintCallBack;
 
 public abstract class Command {
@@ -21,7 +24,7 @@ public abstract class Command {
 	public void setCallBack(PrintCallBack callback) {
 		this.callback = callback;
 	}
-	public abstract void execute() throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException, DuplicateFileException, IOException;
+	public abstract void execute() throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException, DuplicateFileException, IOException, InvalidSymbolException, InvalidAddressException, NullAdressException;
 
 	public String getDescription() {
 		return description;

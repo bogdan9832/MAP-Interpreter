@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidAddressException;
 import Model.Exceptions.InvalidFileException;
 import Model.Exceptions.InvalidSignException;
+import Model.Exceptions.InvalidSymbolException;
+import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IExpression;
 import Model.Interfaces.IStatement;
 import Model.Utils.ProgramState;
@@ -20,8 +23,8 @@ public class ReadFileStatement implements IStatement {
 		this.symbol = symbol;
 	}
 	@Override
-	public IProgramState execute(ProgramState state) throws InvalidSignException, InvalidFileException, IOException, DuplicateSymbolException {
-		int fid = exp.resolve(state.symTabel);
+	public IProgramState execute(ProgramState state) throws InvalidSignException, InvalidFileException, IOException, DuplicateSymbolException, InvalidSymbolException, InvalidAddressException, NullAdressException {
+		int fid = exp.resolve(state.symTabel,  state.heap);
 		BufferedReader r = state.fileTable.getFile(fid);
 		int value = 0;
 		try{

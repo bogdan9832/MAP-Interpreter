@@ -1,5 +1,6 @@
 package Model.Utils.Interfaces;
 
+import java.util.HashMap;
 import java.util.Set;
 
 import Model.Exceptions.DuplicateSymbolException;
@@ -11,4 +12,5 @@ public interface ISymbolTable {
 	void setValue(String s , int val) throws InvalidSymbolException;
 	Set<String> getKeyset();
 	String toString();
+	HashMap<String, Integer> getContent();
 }

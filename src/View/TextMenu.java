@@ -8,9 +8,12 @@ import java.util.Scanner;
 import Model.Comands.Command;
 import Model.Exceptions.DuplicateFileException;
 import Model.Exceptions.DuplicateSymbolException;
+import Model.Exceptions.InvalidAddressException;
 import Model.Exceptions.InvalidFileException;
 import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidStateException;
+import Model.Exceptions.InvalidSymbolException;
+import Model.Exceptions.NullAdressException;
 import Model.Utils.Interfaces.PrintCallBack;
 
 public class TextMenu {
@@ -30,17 +33,17 @@ public class TextMenu {
 			System.out.println(line);
 		}
 	}
-	
+
 	PrintCallBack printCallBack = new PrintCallBack() {
 
 		@Override
 		public void printCallBack(String print) {
 			System.out.println(print);
 		}
-		
+
 	};
-	
-	@SuppressWarnings("resource")	
+
+	@SuppressWarnings("resource")
 	public void show() {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
@@ -48,7 +51,7 @@ public class TextMenu {
 			System.out.printf("Input the option: ");
 			String key = scanner.nextLine();
 			Command com = commands.get(key);
-			
+
 			if (com == null) {
 				System.out.println("Invalid Option");
 				continue;
@@ -57,7 +60,8 @@ public class TextMenu {
 			try {
 				com.execute();
 			} catch (InvalidStateException | InvalidSignException | DuplicateSymbolException | InvalidFileException
-					| DuplicateFileException | IOException e) {
+					| DuplicateFileException | IOException | InvalidSymbolException | InvalidAddressException
+					| NullAdressException e) {
 				System.out.println(e.getMessage());
 			}
 		}

@@ -1,6 +1,9 @@
 package Model.Statements;
 
+import Model.Exceptions.InvalidAddressException;
 import Model.Exceptions.InvalidSignException;
+import Model.Exceptions.InvalidSymbolException;
+import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IExpression;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Interfaces.IStatement;
@@ -18,8 +21,8 @@ public class IfStatement implements IStatement {
 	}
 
 	@Override
-	public IProgramState execute(ProgramState state) throws InvalidSignException {
-		if (getExp().isTrue(state.symTabel)) {
+	public IProgramState execute(ProgramState state) throws InvalidSignException, InvalidSymbolException, InvalidAddressException, NullAdressException {
+		if (getExp().isTrue(state.symTabel, state.heap)) {
 			state.exeStack.push(trueStatement);
 		} else {
 			state.exeStack.push(falseStatement);

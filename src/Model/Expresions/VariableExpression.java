@@ -1,6 +1,7 @@
 package Model.Expresions;
 
 import Model.Interfaces.IExpression;
+import Model.Utils.Interfaces.IHeap;
 import Model.Utils.Interfaces.ISymbolTable;
 
 public class VariableExpression implements IExpression{
@@ -10,7 +11,7 @@ public class VariableExpression implements IExpression{
 		s = name;
 	}
 	@Override
-	public int resolve(ISymbolTable st) {
+	public int resolve(ISymbolTable st, IHeap heap) {
 		try {
 			return st.getValueOf(s);
 			
@@ -25,8 +26,8 @@ public class VariableExpression implements IExpression{
 		}
 	}
 	@Override
-	public boolean isTrue(ISymbolTable st) {
-		return this.resolve(st) != 0 ? true : false;
+	public boolean isTrue(ISymbolTable st, IHeap heap) {
+		return this.resolve(st, heap) != 0 ? true : false;
 	}
 	public String toString() {
     	return s;
