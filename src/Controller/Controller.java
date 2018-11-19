@@ -19,6 +19,7 @@ public class Controller implements IController {
 	public PrintCallBack callback;
 	public Controller(IRepository r) {
 		repo = r;
+		
 	}
 
 	public ProgramState getNextState(IProgramState s) throws InvalidStateException, InvalidSignException,
