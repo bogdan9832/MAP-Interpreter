@@ -5,7 +5,6 @@ import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IExpression;
-import Model.Utils.Heap;
 import Model.Utils.Interfaces.IHeap;
 import Model.Utils.Interfaces.ISymbolTable;
 

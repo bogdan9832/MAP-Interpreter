@@ -9,7 +9,6 @@ import Model.Expresions.ArithmeticExpression;
 import Model.Expresions.ConstantExpression;
 import Model.Expresions.HeapReadExpression;
 import Model.Expresions.VariableExpression;
-import Model.Interfaces.IExpression;
 import Model.Interfaces.IStatement;
 import Model.Statements.AssignmentStatement;
 import Model.Statements.CloseReadFileStatement;

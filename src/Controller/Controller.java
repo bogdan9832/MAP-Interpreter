@@ -14,7 +14,6 @@ import Model.Exceptions.InvalidStateException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
 import Model.Utils.ProgramState;
-import Model.Utils.Interfaces.IHeap;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Utils.Interfaces.PrintCallBack;
 import Repository.Interfaces.IRepository;
