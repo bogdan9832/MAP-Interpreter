@@ -1,17 +1,8 @@
 package Model.Comands;
 
-import java.io.IOException;
 
 import Controller.Controller;
 import Controller.Interfaces.IController;
-import Model.Exceptions.DuplicateFileException;
-import Model.Exceptions.DuplicateSymbolException;
-import Model.Exceptions.InvalidAddressException;
-import Model.Exceptions.InvalidFileException;
-import Model.Exceptions.InvalidSignException;
-import Model.Exceptions.InvalidStateException;
-import Model.Exceptions.InvalidSymbolException;
-import Model.Exceptions.NullAdressException;
 import Model.Utils.Interfaces.PrintCallBack;
 
 public class RunExample extends Command {
@@ -31,9 +22,7 @@ public class RunExample extends Command {
 	}
 
 	@Override
-	public void execute()
-			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,
-			DuplicateFileException, IOException, InvalidSymbolException, InvalidAddressException, NullAdressException {
+	public void execute(){
 
 		c.allSteps();
 

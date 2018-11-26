@@ -22,32 +22,28 @@ public class BooleanExpression implements IExpression {
 	@Override
 	public int resolve(ISymbolTable st, IHeap heap)
 			throws InvalidSignException, InvalidSymbolException, InvalidAddressException, NullAdressException {
-		int s = 0;
+		
 		int operator1Result = operator1.resolve(st, heap);
 		int operator2Result = operator2.resolve(st, heap);
 
 		switch (operand) {
 		case "<":
-			s = operator1Result + operator2Result;
-			break;
+			return operator1Result < operator2Result ? 1 : 0;			
 		case "<=":
-			s = operator1Result - operator2Result;
-			break;
+			return operator1Result <= operator2Result ? 1 : 0;
 		case "==":
-			s = operator1Result * operator2Result;
-			break;
+			return operator1Result == operator2Result ? 1 : 0;
 		case ">=":
-			s = operator1Result / operator2Result;
-			break;
+			return operator1Result >= operator2Result ? 1 : 0;
 		case ">":
-			break;
+			return operator1Result > operator2Result ? 1 : 0;
 		case "!=":
-			break;
+			return operator1Result != operator2Result ? 1 : 0;
 
 		default:
 			throw new InvalidSignException("Valid sign expected ( <, <=, ==, !=, >, >= ). Sign given: " + operand, 1);
 		}
-		return s;
+		
 	}
 
 	@Override

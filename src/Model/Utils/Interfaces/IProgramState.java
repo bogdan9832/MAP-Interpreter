@@ -11,6 +11,7 @@ import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidStateException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
+import Model.Interfaces.IStatement;
 
 public interface IProgramState  {
 	public void executeNextStep()
@@ -21,4 +22,6 @@ public interface IProgramState  {
 	public boolean isDone();
 	public IHeap getHeap();
 	public ISymbolTable getSymTable();
+	public IFileTable getFileTable();
+	void addStatement(IStatement s);
 }

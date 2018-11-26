@@ -16,8 +16,7 @@ import Model.Utils.Interfaces.IProgramState;
 
 public interface IController {
 	public void allSteps()
-			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,
-			DuplicateFileException, IOException, InvalidSymbolException, InvalidAddressException, NullAdressException;
+			;
 
 	public void nextStep()
 			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,

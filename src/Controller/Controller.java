@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -13,6 +14,8 @@ import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidStateException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
+import Model.Expresions.ConstantExpression;
+import Model.Statements.CloseReadFileStatement;
 import Model.Utils.ProgramState;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Utils.Interfaces.PrintCallBack;
@@ -38,23 +41,42 @@ public class Controller implements IController {
 	}
 
 	@Override
-	public void allSteps()
-			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,
-			IOException, DuplicateFileException, InvalidSymbolException, InvalidAddressException, NullAdressException {
+	public void allSteps() {
 		repo.clean();
 		IProgramState s = repo.getProgramState(0);
-
-		repo.logProgramStates();
-		callback.printCallBack(s.toString());
-
-		while (!s.isDone()) {
-			s = this.getNextState(s);
-			s.getHeap().setContent(
-					conservativeGarbageCollector(s.getSymTable().getContent().values(), s.getHeap().getContent()));
-
+		try {
 			repo.logProgramStates();
 			callback.printCallBack(s.toString());
 
+			while (!s.isDone()) {
+				s = this.getNextState(s);
+				s.getHeap().setContent(
+						conservativeGarbageCollector(s.getSymTable().getContent().values(), s.getHeap().getContent()));
+
+				repo.logProgramStates();
+				callback.printCallBack(s.toString());
+
+			}
+		} catch (InvalidAddressException | IOException | InvalidStateException | InvalidSignException
+				| DuplicateSymbolException | InvalidFileException | DuplicateFileException | InvalidSymbolException
+				| NullAdressException ex) {
+			callback.printCallBack(ex.getLocalizedMessage());
+		}
+		finally {
+			for(int fd : s.getSymTable().getContent().values()) {
+				if (s.getFileTable().contains(fd)) {
+					try {
+						s.addStatement(new CloseReadFileStatement(new ConstantExpression(fd)));					
+						s.executeNextStep();
+						callback.printCallBack("Closed file with file descriptor: " + fd);
+					} catch (InvalidStateException | InvalidSignException | DuplicateSymbolException
+							| InvalidFileException | IOException | DuplicateFileException | InvalidSymbolException
+							| InvalidAddressException | NullAdressException e) {
+
+						callback.printCallBack(e.getLocalizedMessage());
+					}
+				}
+			}
 		}
 	}
 
@@ -80,7 +102,7 @@ public class Controller implements IController {
 			if (!symTableValues.contains(address))
 				heap.remove(address);
 		return heap;
-
+		
 	}
 
 }

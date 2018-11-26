@@ -108,4 +108,9 @@ public class ProgramState implements IProgramState {
 		return symTabel;
 	}
 
+	@Override
+	public IFileTable getFileTable() {
+		return fileTable;
+	}
+
 }

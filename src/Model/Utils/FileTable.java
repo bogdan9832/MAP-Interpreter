@@ -72,5 +72,15 @@ public class FileTable implements IFileTable {
 		
 		return files.size();
 	}
+	@Override
+	public boolean contains(int key) {
+		try {
+			this.getFile(key);
+			return true;
+		} catch (InvalidFileException e) {
+			return false;
+		}
+	}
+	
 	
 }

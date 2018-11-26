@@ -8,7 +8,6 @@ import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IExpression;
 import Model.Interfaces.IStatement;
 import Model.Utils.ProgramState;
-import Model.Utils.SymbolTable;
 import Model.Utils.Interfaces.IProgramState;
 
 public class HeapWritingStatement implements IStatement {

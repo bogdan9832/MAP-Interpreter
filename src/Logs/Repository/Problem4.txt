@@ -934,3 +934,396 @@ FileTable:
 
 Output: 
 	15, 0, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	OpenReadFileStatement(var_f, "src/Input/test.in")
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 0, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 0, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	OpenReadFileStatement(var_f, "src/Input/test.in")
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 0, 

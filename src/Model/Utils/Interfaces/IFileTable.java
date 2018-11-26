@@ -11,4 +11,6 @@ public interface IFileTable {
 	void removeFile(int i) throws InvalidFileException;
 	String toString();
 	int count();
+	boolean contains(int key);
+	
 }
