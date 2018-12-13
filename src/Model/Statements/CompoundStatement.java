@@ -19,7 +19,7 @@ public class CompoundStatement implements IStatement {
        state.exeStack.push(statement1);
        
 
-		return state;
+		return null;
 	}
 
 

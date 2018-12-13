@@ -1,5 +1,29 @@
 +---------------------------------------------------------------
 
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
+
+ExecutionStack: 
+	a = 2 + 3 * 5 ;b = a - 4 / 2 + 7 ;Print( b )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
+
 ExecutionStack: 
 	a = 2 + 3 * 5 ;b = a - 4 / 2 + 7 
 	Print( b )
@@ -12,10 +36,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
 
 ExecutionStack: 
 	a = 2 + 3 * 5 
@@ -30,10 +60,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
 
 ExecutionStack: 
 	b = a - 4 / 2 + 7 
@@ -47,10 +83,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
 
 ExecutionStack: 
 	Print( b )
@@ -64,10 +106,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: adaaeea3-fabc-4921-9dfa-c643d1ef938c      
 
 ExecutionStack: 
 Empty
@@ -78,6 +126,10 @@ SymbolTable:
 
 
 FileTable: 
+	Empty
+
+
+ Heap: 
 	Empty
 
 Output: 

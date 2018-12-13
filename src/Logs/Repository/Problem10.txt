@@ -1,0 +1,508 @@
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = 5 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 5
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 ;Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 5
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 5
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 4
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 4
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 ;Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 4
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 4
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 3
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 3
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 ;Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 3
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 3
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 2
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 2
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 ;Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 2
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 2
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 ;Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	a = a - 1 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	Print( a )
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+	While( a > 0 then: a = a - 1 ;Print( a ) 
+
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 0, 
++---------------------------------------------------------------
+
+ProgramState GUID: 4b86e386-27a7-4a90-83f6-4e6e4f4f79cf      
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	4, 3, 2, 1, 0, 

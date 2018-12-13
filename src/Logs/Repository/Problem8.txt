@@ -1,9 +1,9 @@
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	v = 10 ;new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+	a = 10 ;new( a, 20);Print( a );a = 100 ;Print( a )
 
 
 SymbolTable: 
@@ -22,11 +22,11 @@ Output:
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	v = 10 
-	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+	a = 10 
+	new( a, 20);Print( a );a = 100 ;Print( a )
 
 
 SymbolTable: 
@@ -45,14 +45,14 @@ Output:
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	new( v, 20);new( a, 22);Print( 100 + v );Print( 100 + a )
+	new( a, 20);Print( a );a = 100 ;Print( a )
 
 
 SymbolTable: 
-	v     = 10
+	a     = 10
 
 
 FileTable: 
@@ -67,15 +67,15 @@ Output:
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	new( v, 20)
-	new( a, 22);Print( 100 + v );Print( 100 + a )
+	new( a, 20)
+	Print( a );a = 100 ;Print( a )
 
 
 SymbolTable: 
-	v     = 10
+	a     = 10
 
 
 FileTable: 
@@ -90,37 +90,14 @@ Output:
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	new( a, 22);Print( 100 + v );Print( 100 + a )
+	Print( a );a = 100 ;Print( a )
 
 
 SymbolTable: 
-	v     = 1
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	1     = 20   
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
-
-ExecutionStack: 
-	new( a, 22)
-	Print( 100 + v );Print( 100 + a )
-
-
-SymbolTable: 
-	v     = 1
+	a     = 1
 
 
 FileTable: 
@@ -135,15 +112,15 @@ Output:
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	Print( 100 + v );Print( 100 + a )
+	Print( a )
+	a = 100 ;Print( a )
 
 
 SymbolTable: 
-	a     = 2
-	v     = 1
+	a     = 1
 
 
 FileTable: 
@@ -152,23 +129,20 @@ FileTable:
 
  Heap: 
 	1     = 20   
-	2     = 22   
 
 Output: 
 	Empty
 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	Print( 100 + v )
-	Print( 100 + a )
+	a = 100 ;Print( a )
 
 
 SymbolTable: 
-	a     = 2
-	v     = 1
+	a     = 1
 
 
 FileTable: 
@@ -177,22 +151,20 @@ FileTable:
 
  Heap: 
 	1     = 20   
-	2     = 22   
 
 Output: 
-	Empty
-
+	20, 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
-	Print( 100 + a )
+	a = 100 
+	Print( a )
 
 
 SymbolTable: 
-	a     = 2
-	v     = 1
+	a     = 1
 
 
 FileTable: 
@@ -201,20 +173,39 @@ FileTable:
 
  Heap: 
 	1     = 20   
-	2     = 22   
 
 Output: 
-	120, 
+	20, 
 +---------------------------------------------------------------
 
-ProgramState GUID: 2c93e99a-9e68-456f-a8d8-46cbbc720a58      
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
+
+ExecutionStack: 
+	Print( a )
+
+
+SymbolTable: 
+	a     = 100
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	20, 
++---------------------------------------------------------------
+
+ProgramState GUID: f8a14951-c7aa-471a-9724-3bea9dbda6d1      
 
 ExecutionStack: 
 Empty
 
 SymbolTable: 
-	a     = 2
-	v     = 1
+	a     = 100
 
 
 FileTable: 
@@ -223,7 +214,6 @@ FileTable:
 
  Heap: 
 	1     = 20   
-	2     = 22   
 
 Output: 
-	120, 122, 
+	20, 

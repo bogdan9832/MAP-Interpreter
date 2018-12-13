@@ -1,0 +1,322 @@
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	v = 10 ;new( a, 22)
+	fork(wH(a,30);v = 32 ;Print( a ))
+	Print( v );Print( a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	v = 10 
+	new( a, 22)
+	fork(wH(a,30);v = 32 ;Print( a ))
+	Print( v );Print( a )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	new( a, 22)
+	fork(wH(a,30);v = 32 ;Print( a ))
+	Print( v );Print( a )
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	fork(wH(a,30);v = 32 ;Print( a ))
+	Print( v );Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	Print( v );Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+	wH(a,30);v = 32 ;Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	Print( v )
+	Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+	wH(a,30)
+	v = 32 ;Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+	Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+	v = 32 ;Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 
++---------------------------------------------------------------
+
+ProgramState GUID: ccdbc776-ea95-48b1-8bb4-d0f77467161a      
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 30, 
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+	v = 32 
+	Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 30, 
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+	Print( a )
+
+
+SymbolTable: 
+	a     = 1
+	v     = 32
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 30, 
++---------------------------------------------------------------
+
+ProgramState GUID: 02dfb13b-7c14-440d-9cbe-35df43f51941      
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 1
+	v     = 32
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 30   
+
+Output: 
+	10, 30, 30, 

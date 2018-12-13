@@ -34,7 +34,7 @@ public class ReadFileStatement implements IStatement {
 			value = 0;
 		}
 		state.symTabel.addSymbol(symbol, value);
-		return state;
+		return null;
 	}
 	@Override
 	public String toString() {

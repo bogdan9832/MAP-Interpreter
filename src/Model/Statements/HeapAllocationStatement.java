@@ -25,7 +25,7 @@ public class HeapAllocationStatement implements IStatement{
 		int address = state.heap.addItem(value);
 		
 		state.symTabel.addSymbol(varName, address);
-		return state;
+		return null;
 	}
 	
 	@Override

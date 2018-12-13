@@ -24,7 +24,7 @@ public class AssignmentStatement implements IStatement {
     	
 			state.symTabel.addSymbol(s, this.expression.resolve(state.symTabel, state.heap));
 		
-        return state;
+        return null;
     }
     public String toString() {
     	return s + " = " + expression.toString() +" ";

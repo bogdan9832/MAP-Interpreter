@@ -1,5 +1,29 @@
 +---------------------------------------------------------------
 
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
+
+ExecutionStack: 
+	a = 2 - 2 ;If a then: v = 2 else:v = 3  ;Print( v )
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
+
 ExecutionStack: 
 	a = 2 - 2 
 	If a then: v = 2 else:v = 3  ;Print( v )
@@ -12,10 +36,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
 
 ExecutionStack: 
 	If a then: v = 2 else:v = 3  ;Print( v )
@@ -28,10 +58,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
 
 ExecutionStack: 
 	If a then: v = 2 else:v = 3  
@@ -45,10 +81,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
 
 ExecutionStack: 
 	v = 3 
@@ -62,10 +104,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
 
 ExecutionStack: 
 	Print( v )
@@ -79,10 +127,16 @@ SymbolTable:
 FileTable: 
 	Empty
 
+
+ Heap: 
+	Empty
+
 Output: 
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 79a288a5-2c4b-4e54-b558-ad9522316598      
 
 ExecutionStack: 
 Empty
@@ -93,6 +147,10 @@ SymbolTable:
 
 
 FileTable: 
+	Empty
+
+
+ Heap: 
 	Empty
 
 Output: 

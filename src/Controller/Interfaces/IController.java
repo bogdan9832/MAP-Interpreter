@@ -1,5 +1,6 @@
 package Controller.Interfaces;
 
+import java.util.List;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
@@ -12,6 +13,7 @@ import Model.Exceptions.InvalidSignException;
 import Model.Exceptions.InvalidStateException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
+import Model.Utils.ProgramState;
 import Model.Utils.Interfaces.IProgramState;
 
 public interface IController {
@@ -26,6 +28,11 @@ public interface IController {
 			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,
 			IOException, DuplicateFileException, InvalidSymbolException, InvalidAddressException, NullAdressException;
 
-	public HashMap<Integer, Integer> conservativeGarbageCollector(Collection<Integer> symTableValues,
-			HashMap<Integer, Integer> heap);
+	
+	
+
+	void conservativeGarbageCollector(List<IProgramState> prgStates);
+
+	List<ProgramState> removeCompletedProgramStates(List<ProgramState> prgStates);
+	
 }

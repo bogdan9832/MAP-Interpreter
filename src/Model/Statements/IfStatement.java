@@ -27,7 +27,7 @@ public class IfStatement implements IStatement {
 		} else {
 			state.exeStack.push(falseStatement);
 		}
-		return state;
+		return null;
 	}
 
 	public IExpression getExp() {

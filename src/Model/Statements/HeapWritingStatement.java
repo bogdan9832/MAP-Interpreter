@@ -27,7 +27,13 @@ public class HeapWritingStatement implements IStatement {
 
 		int address = state.symTabel.getValueOf(varName);
 		state.heap.updateValue(address, value);
-		return state;
+		return null;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "wH(" + varName + "," + val.toString() + ")";
 	}
 
 }

@@ -1,172 +1,6 @@
 +---------------------------------------------------------------
 
-ExecutionStack: 
-	OpenReadFileStatement(var_f, "src/Input/test.in")
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	OpenReadFileStatement(var_f, "src/Input/test.in")
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	OpenReadFileStatement(var_f, "src/Input/test.in")
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
 
 ExecutionStack: 
 	OpenReadFileStatement(var_f, "src/Input/test.in")
@@ -191,73 +25,7 @@ Output:
 
 +---------------------------------------------------------------
 
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
 
 ExecutionStack: 
 	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
@@ -281,72 +49,7 @@ Output:
 
 +---------------------------------------------------------------
 
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c")
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	ReadFileStatement(var_f + 2, "var_c");Print( var_c )
-	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
-	CloseReadFile( var_f)
-
-
-SymbolTable: 
-	var_f = 0
-
-
-FileTable: 
-	0     = false
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
 
 ExecutionStack: 
 	ReadFileStatement(var_f + 2, "var_c")
@@ -369,3 +72,116 @@ FileTable:
 Output: 
 	Empty
 
++---------------------------------------------------------------
+
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	0, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
+
+ExecutionStack: 
+	Print( 0 )
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	0, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
+
+ExecutionStack: 
+	CloseReadFile( var_f)
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	0, 0, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5486ec9b-67bb-49f0-b0d8-eda0880f5f7b      
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	0, 0, 

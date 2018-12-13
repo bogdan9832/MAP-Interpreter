@@ -4,6 +4,7 @@ import Model.Utils.Interfaces.IProgramState;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import Model.Exceptions.DuplicateFileException;
 import Model.Exceptions.DuplicateSymbolException;
@@ -27,7 +28,7 @@ public class ProgramState implements IProgramState {
 	public ISymbolTable symTabel;
 	public IFileTable fileTable;
 	public IHeap heap;
-
+	public String GUID;
 	public ProgramState() {
 
 		this.exeStack = new ExecutionStack();
@@ -35,6 +36,7 @@ public class ProgramState implements IProgramState {
 		this.symTabel = new SymbolTable();
 		this.fileTable = new FileTable();
 		this.heap = new Heap();
+		this.GUID = UUID.randomUUID().toString();
 	}
 
 	public ProgramState(IExecutionStack exeStack, IOutput output, ISymbolTable simTable, IFileTable fileTable,
@@ -46,6 +48,7 @@ public class ProgramState implements IProgramState {
 		this.fileTable = fileTable;
 		this.heap = heap;
 
+		this.GUID = UUID.randomUUID().toString();
 	}
 
 	public ProgramState(ProgramState p) {
@@ -74,6 +77,7 @@ public class ProgramState implements IProgramState {
 
 	public String toString() {
 		String toReturn = "+---------------------------------------------------------------\r\n\r\n";
+		toReturn += "ProgramState GUID: " + GUID + "      \n\n";
 		toReturn += exeStack.toString();
 		toReturn += "\r\n";
 		toReturn += symTabel.toString();
@@ -111,6 +115,20 @@ public class ProgramState implements IProgramState {
 	@Override
 	public IFileTable getFileTable() {
 		return fileTable;
+	}
+
+	@Override
+	public boolean isNotDone() {
+		return !isDone();
+	}
+
+	@Override
+	public ProgramState oneStep() throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException, IOException, DuplicateFileException, InvalidSymbolException, InvalidAddressException, NullAdressException {
+		if(this.isNotDone()) {
+			return (ProgramState) exeStack.pop().execute(this);
+			 
+		}else 
+			throw new InvalidStateException("",0);
 	}
 
 }

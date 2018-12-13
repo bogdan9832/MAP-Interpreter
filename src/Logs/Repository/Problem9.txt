@@ -1,8 +1,11 @@
 +---------------------------------------------------------------
 
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
 ExecutionStack: 
-	a = 5 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
+	OpenReadFileStatement(var_f, "src/Input/test.in")
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
 
 
 SymbolTable: 
@@ -21,16 +24,19 @@ Output:
 
 +---------------------------------------------------------------
 
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
 ExecutionStack: 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
 
 
 SymbolTable: 
-	a     = 5
+	var_f = 0
 
 
 FileTable: 
-	Empty
+	0     = false
 
 
  Heap: 
@@ -40,606 +46,160 @@ Output:
 	Empty
 
 +---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	Print( var_c )
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	If var_c then: ReadFileStatement(var_f, "var_c");Print( var_c )else:Print( 0 ) 
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c");Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	ReadFileStatement(var_f, "var_c")
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 15
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
+
+ExecutionStack: 
+	Print( var_c )
+
+
+SymbolTable: 
+	var_f = 0
+	var_c = 0
+
+
+FileTable: 
+	0     = false
+
+
+ Heap: 
+	Empty
+
+Output: 
+	15, 
++---------------------------------------------------------------
+
+ProgramState GUID: 5a9e9d0d-5427-4d7a-b975-cd2d488b7b05      
 
 ExecutionStack: 
 Empty
 
 SymbolTable: 
-	a     = 5
+	var_f = 0
+	var_c = 0
 
 
 FileTable: 
-	Empty
+	0     = false
 
 
  Heap: 
 	Empty
 
 Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = 5 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = 5 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = 5 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a < 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = 5 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	Empty
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 ;Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 5
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 4
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	Empty
-
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 4
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 ;Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 4
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 4
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 3
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 3
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 ;Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 3
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 3
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 2
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 2
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 ;Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 2
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 2
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 1
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 1
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 ;Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 1
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	a = a - 1 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 1
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	Print( a )
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 0
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-	While( a > 0 then: a = a - 1 ;Print( a ) 
-
-
-SymbolTable: 
-	a     = 0
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 0, 
-+---------------------------------------------------------------
-
-ExecutionStack: 
-Empty
-
-SymbolTable: 
-	a     = 0
-
-
-FileTable: 
-	Empty
-
-
- Heap: 
-	Empty
-
-Output: 
-	4, 3, 2, 1, 0, 
+	15, 0, 

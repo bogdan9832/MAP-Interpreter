@@ -28,7 +28,7 @@ public class OpenReadFileStatement implements IStatement {
 		state.fileTable.addFile(fd, new BufferedReader(new FileReader(new File(fileName))));
 		state.symTabel.addSymbol(symbol,fd);
 		
-		return state;
+		return null;
 	}
 	
 	@Override

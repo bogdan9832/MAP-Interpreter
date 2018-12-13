@@ -1,9 +1,19 @@
 package Controller;
 
 import java.io.IOException;
-
+import java.lang.Thread.State;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 import Controller.Interfaces.IController;
 import Model.Exceptions.DuplicateFileException;
@@ -16,6 +26,7 @@ import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
 import Model.Expresions.ConstantExpression;
 import Model.Statements.CloseReadFileStatement;
+import Model.Statements.HeapAllocationStatement;
 import Model.Utils.ProgramState;
 import Model.Utils.Interfaces.IProgramState;
 import Model.Utils.Interfaces.PrintCallBack;
@@ -25,7 +36,7 @@ public class Controller implements IController {
 
 	IRepository repo;
 	public PrintCallBack callback;
-
+	private ExecutorService executor = Executors.newFixedThreadPool(2);
 	public Controller(IRepository r) {
 		repo = r;
 
@@ -34,50 +45,78 @@ public class Controller implements IController {
 	public ProgramState getNextState(IProgramState s)
 			throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException,
 			IOException, DuplicateFileException, InvalidSymbolException, InvalidAddressException, NullAdressException {
-		ProgramState st = new ProgramState((ProgramState) s);
-		repo.addProgramState(st);
+		ProgramState st = (ProgramState) s;
+
 		st.executeNextStep();
 		return st;
 	}
 
+	public void oneStepForAllProgramStates(List<ProgramState> prgList) throws InterruptedException {
+
+		List<Callable<ProgramState>> callList = prgList.stream()
+				.map((ProgramState p) -> (Callable<ProgramState>) (() -> p.oneStep())).collect(Collectors.toList());
+		
+		List<ProgramState> newPrgList = ((ExecutorService) executor).invokeAll(callList).stream().map(future -> {
+			try {
+				return future.get();
+			} catch (Exception ex) {
+				String msg = ex.getMessage();
+				callback.printCallBack(msg.substring(msg.indexOf(':') + 1, msg.length() - 1));
+			}
+			return null;
+		}).filter(p -> p != null).collect(Collectors.toList());
+
+		prgList.addAll(newPrgList);
+
+		prgList.forEach(prg -> {
+			try {
+				repo.logProgramStates(prg);
+			} catch (IOException e) {
+				callback.printCallBack(e.getMessage());
+			}
+		});
+
+		repo.setProgramStateList(new ArrayList<>(prgList));
+	}
+
 	@Override
 	public void allSteps() {
-		repo.clean();
-		IProgramState s = repo.getProgramState(0);
-		try {
-			repo.logProgramStates();
-			callback.printCallBack(s.toString());
 
-			while (!s.isDone()) {
-				s = this.getNextState(s);
-				s.getHeap().setContent(
-						conservativeGarbageCollector(s.getSymTable().getContent().values(), s.getHeap().getContent()));
-
-				repo.logProgramStates();
-				callback.printCallBack(s.toString());
-
+		List<ProgramState> prgList = removeCompletedProgramStates(repo.getProgramStateList());
+		prgList.forEach(prg -> {
+			try {
+				repo.logProgramStates(prg);
+			} catch (IOException e) {
+				callback.printCallBack(e.getMessage());
 			}
-		} catch (InvalidAddressException | IOException | InvalidStateException | InvalidSignException
-				| DuplicateSymbolException | InvalidFileException | DuplicateFileException | InvalidSymbolException
-				| NullAdressException ex) {
-			callback.printCallBack(ex.getLocalizedMessage());
-		}
-		finally {
-			for(int fd : s.getSymTable().getContent().values()) {
-				if (s.getFileTable().contains(fd)) {
-					try {
-						s.addStatement(new CloseReadFileStatement(new ConstantExpression(fd)));					
-						s.executeNextStep();
-						callback.printCallBack("Closed file with file descriptor: " + fd);
-					} catch (InvalidStateException | InvalidSignException | DuplicateSymbolException
-							| InvalidFileException | IOException | DuplicateFileException | InvalidSymbolException
-							| InvalidAddressException | NullAdressException e) {
+		});
+		while (prgList.size() > 0) {
+			try {
 
-						callback.printCallBack(e.getLocalizedMessage());
-					}
-				}
+				oneStepForAllProgramStates(prgList);
+			} catch (InterruptedException e) {
+				callback.printCallBack("execution interupted");
 			}
+
+			prgList = removeCompletedProgramStates(repo.getProgramStateList());
 		}
+		((ExecutorService) executor).shutdownNow();
+		/*
+		 * for(IProgramState s : prgList) { for (int fd :
+		 * s.getSymTable().getContent().values()) { if (s.getFileTable().contains(fd)) {
+		 * try {
+		 * 
+		 * s.addStatement(new CloseReadFileStatement(new ConstantExpression(fd)));
+		 * s.executeNextStep(); callback.printCallBack(s.toString()); } catch
+		 * (InvalidStateException | InvalidSignException | DuplicateSymbolException |
+		 * InvalidFileException | IOException | DuplicateFileException |
+		 * InvalidSymbolException | InvalidAddressException | NullAdressException e) {
+		 * 
+		 * callback.printCallBack(e.getMessage()); } } } }
+		 */
+
+		repo.setProgramStateList(prgList);
+
 	}
 
 	@Override
@@ -85,24 +124,32 @@ public class Controller implements IController {
 			InvalidFileException, DuplicateFileException, InvalidSymbolException, InvalidAddressException,
 			NullAdressException {
 
-		IProgramState s = repo.getProgramState(0);
-
-		if (!s.isDone()) {
-			s = this.getNextState(s);
-			repo.logProgramStates();
-
-		}
 	}
 
 	@Override
-	public HashMap<Integer, Integer> conservativeGarbageCollector(Collection<Integer> symTableValues,
-			HashMap<Integer, Integer> heap) {
+	public void conservativeGarbageCollector(List<IProgramState> prgStates) {
+		HashSet<Integer> symbolTableValues = new HashSet<>();
+		HashMap<Integer, Integer> heap = new HashMap<>();
+		for (IProgramState s : prgStates)
+			symbolTableValues.addAll(s.getSymTable().getContent().values());
 
-		for (Integer address : heap.keySet())
-			if (!symTableValues.contains(address))
-				heap.remove(address);
-		return heap;
-		
+		for (IProgramState s : prgStates) {
+			for (Integer val : s.getHeap().getContent().values())
+				if (!symbolTableValues.contains(val)) {
+					heap.remove(val);
+				}
+		}
+
+		if (prgStates.size() > 0) {
+			prgStates.get(0).getHeap().setContent(heap);
+		}
+
+	}
+
+	@Override
+	public List<ProgramState> removeCompletedProgramStates(List<ProgramState> prgStates) {
+
+		return prgStates.stream().filter(i -> i.isNotDone()).collect(Collectors.toList());
 	}
 
 }

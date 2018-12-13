@@ -1,0 +1,325 @@
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	v = 10 ;new( v, 20);new( a, 22);wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	v = 10 
+	new( v, 20);new( a, 22);wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	Empty
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	new( v, 20);new( a, 22);wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	new( v, 20)
+	new( a, 22);wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 10
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	Empty
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	new( a, 22);wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	new( a, 22)
+	wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	wH(a,30);Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	wH(a,30)
+	Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 22   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	Print( a );Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	Print( a )
+	Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	Empty
+
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	Print( a );a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	Print( a )
+	a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+	a = 0 
+
+
+SymbolTable: 
+	a     = 2
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 30, 
++---------------------------------------------------------------
+
+ProgramState GUID: dbd5d318-eb03-4f3c-882a-5a9390c1ad0f      
+
+ExecutionStack: 
+Empty
+
+SymbolTable: 
+	a     = 0
+	v     = 1
+
+
+FileTable: 
+	Empty
+
+
+ Heap: 
+	1     = 20   
+	2     = 30   
+
+Output: 
+	2, 30, 

@@ -19,7 +19,7 @@ public class PrintStatement implements IStatement {
     {
 
         state.output.addOutput(getExp().resolve(state.symTabel , state.heap));
-        return state;
+        return null;
     }
 
     public IExpression getExp() {

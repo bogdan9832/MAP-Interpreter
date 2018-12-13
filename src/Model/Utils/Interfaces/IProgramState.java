@@ -12,6 +12,7 @@ import Model.Exceptions.InvalidStateException;
 import Model.Exceptions.InvalidSymbolException;
 import Model.Exceptions.NullAdressException;
 import Model.Interfaces.IStatement;
+import Model.Utils.ProgramState;
 
 public interface IProgramState  {
 	public void executeNextStep()
@@ -20,6 +21,8 @@ public interface IProgramState  {
 	public String toString();
 	public ArrayList<Integer> getOutput();
 	public boolean isDone();
+	public boolean isNotDone();
+	public ProgramState oneStep() throws InvalidStateException, InvalidSignException, DuplicateSymbolException, InvalidFileException, IOException, DuplicateFileException, InvalidSymbolException, InvalidAddressException, NullAdressException;
 	public IHeap getHeap();
 	public ISymbolTable getSymTable();
 	public IFileTable getFileTable();

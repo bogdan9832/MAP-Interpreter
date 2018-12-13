@@ -32,4 +32,9 @@ public class DuplicateFileException extends Exception {
 	public int getCode() {
 		return code;
 	}
+	@Override
+	public String getMessage() {
+		String msg = super.getMessage();
+		return msg.substring(msg.indexOf(':'), msg.length() - 1);
+	}
 }

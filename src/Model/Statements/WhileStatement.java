@@ -25,7 +25,7 @@ public class WhileStatement implements IStatement {
 			state.exeStack.push(statementToExecute);
 		}
 		
-		return state;
+		return null;
 	}
 
 	public IExpression getExp() {
